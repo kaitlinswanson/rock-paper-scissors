@@ -7,36 +7,37 @@
 <body>
 
   <script>
-// function needs to randomly generate rock, paper, or scissors. 
+    
+const playerSelection = prompt("Please select rock, paper, or scissors");
+const computerSelection = 0;
+
 function computerPlay(min, max) { 
     
     let computerNumber = Math.floor(Math.random() * (max - min + 1) + min);
 
 
 if (computerNumber === 1) {
-return "Rock"
+computerSelection === "Rock"
 } 
 if (computerNumber === 2) {
- return "Paper"
+computerSelection === "Paper"
 } else { 
- return "Scissors"
+computerSelection === "Scissors"
 }
 } 
 computerPlay(1, 3);
-let computerResponse = computerPlay(1, 3);
 
 
-
-// function that plays a round of the game. takes in two params 'playerSelection' and 'computerSelection' 
 function gameRound(playerSelection, computerSelection) { 
+if(playerSelection === "rock" && computerSelection === "paper") {
+return "You Lose!";
 
+}else{
 
+  return "You Win!"; 
 }
-//function returns "You Win! blank beats blank!"
-
-// else returns "You Lose!" statement 
-
-//make sure to use return instead of console.log. 
+}
+gameRound(playerSelection,computerSelection);
 
   </script>
 </body>
