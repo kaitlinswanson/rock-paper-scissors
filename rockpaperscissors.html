@@ -8,8 +8,8 @@
 
   <script>
     
-const playerSelection = prompt("Please select rock, paper, or scissors");
-const computerSelection = 0;
+    const playerSelection = prompt("Please select rock, paper, or scissors");
+
 
 function computerPlay(min, max) { 
     
@@ -17,12 +17,12 @@ function computerPlay(min, max) {
 
 
 if (computerNumber === 1) {
-computerSelection === "Rock"
+let computerChoice = "rock"
 } 
 if (computerNumber === 2) {
-computerSelection === "Paper"
+computerChoice = "paper"
 } else { 
-computerSelection === "Scissors"
+computerChoice = "scissors"
 }
 } 
 computerPlay(1, 3);
@@ -30,14 +30,28 @@ computerPlay(1, 3);
 
 function gameRound(playerSelection, computerSelection) { 
 if(playerSelection === "rock" && computerSelection === "paper") {
-return "You Lose!";
-
-}else{
-
-  return "You Win!"; 
+alert("You Lose! Paper beats Rock.");
+}
+if(playerSelection === "rock" && computerSelection === "scissors") { 
+  alert("You Win! Rock beats Scissors.");
+}
+if(playerSelection === computerSelection) { 
+  alert("Tie!");
+}
+if(playerSelection === "paper" && computerSelection === "scissors") {
+  alert("You Lose! Scissors beats paper.");
+}
+if(playerSelection === "paper" && computerSelection === "rock") {
+  alert("You Win! Paper beats Rock");
+}
+if(playerSelection === "scissors" && computerSelection === "rock") {
+  alert("You Lose! Rock beats Scissors!");
+}
+if(playerSelection === "scissors" && computerSelection === "paper") { 
+  alert("You Win! Scissors beats Paper!");
 }
 }
-gameRound(playerSelection,computerSelection);
+gameRound(playerSelection,computerChoice);
 
   </script>
 </body>
